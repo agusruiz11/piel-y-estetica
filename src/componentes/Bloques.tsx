@@ -166,7 +166,7 @@ export function Retrato({ prioridad = false }: { prioridad?: boolean }) {
   return (
     <Image
       className="retrato-foto"
-      src="/dra-laura-mijelshon.jpg"
+      src="/retrato-dra-mijelshon.jpg"
       alt="Dra. Laura Mijelshon en su consultorio"
       width={1200}
       height={1500}

@@ -66,7 +66,7 @@ export default function Home() {
           </div>
           <div className="h-hero-foto">
             <Image
-              src="/dra-laura-mijelshon.jpg"
+              src="/retrato-dra-mijelshon.jpg"
               alt="Dra. Laura Mijelshon en su consultorio"
               width={1200}
               height={1500}
@@ -220,7 +220,7 @@ export default function Home() {
         <div className="wrap ancho h-doctora-grid">
           <div className="h-doctora-foto">
             <Image
-              src="/dra-laura-mijelshon.jpg"
+              src="/retrato-dra-mijelshon.jpg"
               alt="Dra. Laura Mijelshon"
               width={1200}
               height={1500}

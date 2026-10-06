@@ -36,5 +36,5 @@ Un tratamiento sin `detalle` igual tiene página: se arma con una estructura bas
 ## Pendiente antes de publicar
 
 - Etiquetas de medición (Tag Manager, GA4, Google Ads, Píxel de Meta). Los botones de WhatsApp ya llevan `data-evento="clic_whatsapp"` y el formulario termina en `/gracias`.
-- Reemplazar el retrato provisorio (`public/dra-laura-mijelshon.jpg`, es un cuadro de video) por una foto definitiva.
+- El retrato (`public/retrato-dra-mijelshon.jpg`) sale de un cuadro de video con el micrófono borrado por edición. Si hay sesión de fotos, conviene reemplazarlo.
 - Redirecciones desde las URLs viejas de Wix: están en `next.config.ts`.

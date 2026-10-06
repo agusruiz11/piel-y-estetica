@@ -1,9 +1,17 @@
 // Datos generales del sitio. Se editan acá y se reflejan en todas las páginas.
 
+// URL pública: la definida a mano, si no el dominio de producción en Vercel.
+// Se usa para armar los enlaces absolutos de las imágenes al compartir.
+const urlSitio =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "https://www.pielyestetica.com");
+
 export const sitio = {
   nombre: "Centro Piel y Estética",
   doctora: "Dra. Laura Mijelshon",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.pielyestetica.com",
+  url: urlSitio,
   mail: "info@pielyestetica.com",
   telefono: "(+54 11) 4775 9186",
   telefonoLink: "+541147759186",

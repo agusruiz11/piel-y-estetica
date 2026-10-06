@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     "Dermatología clínica y estética en Belgrano y Pilar. Tratamientos faciales y corporales con evaluación médica previa.",
   robots: indexable ? undefined : { index: false, follow: false },
   openGraph: { siteName: sitio.nombre, locale: "es_AR", type: "website" },
+  twitter: { card: "summary_large_image" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

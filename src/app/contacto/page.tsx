@@ -4,7 +4,7 @@ import { Contacto, Hero } from "@/componentes/Bloques";
 export const metadata: Metadata = {
   title: "Contacto",
   description:
-    "Consultorios en Belgrano y Pilar. Reservá tu evaluación por formulario, WhatsApp o teléfono.",
+    "Consultorios en Las Cañitas y Pilar. Reservá tu evaluación por formulario, WhatsApp o teléfono.",
   alternates: { canonical: "/contacto" },
 };
 
@@ -15,7 +15,7 @@ export default function Pagina() {
         eyebrow="Contacto"
         linea1="Nuestros"
         linea2="consultorios"
-        bajada="Atendemos en Belgrano y en Pilar. Escribinos y coordinamos día y horario."
+        bajada="Atendemos en Las Cañitas y en Pilar. Escribinos y coordinamos día y horario."
       />
       <Contacto origen="Contacto" />
     </>

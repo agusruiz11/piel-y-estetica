@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Acciones, Contacto, Hero } from "@/componentes/Bloques";
-import { Pendiente } from "@/componentes/Texto";
 
 export const metadata: Metadata = {
   title: "Depilación láser",
-  description: "Depilación láser en rostro y cuerpo, en Belgrano y Pilar.",
+  description: "Depilación láser en rostro y cuerpo, en Las Cañitas y Pilar.",
   alternates: { canonical: "/depilacion" },
 };
 
@@ -15,7 +14,7 @@ export default function Pagina() {
         eyebrow="Depilación"
         linea1="Depilación"
         linea2="láser"
-        bajada="Depilación definitiva en rostro y cuerpo, con profesionales especializados y packs por zona."
+        bajada="Depilación en todas las zonas del cuerpo, con láser Soprano Ice y luz pulsada Harmony. Los packs se arman según lo que necesita cada paciente."
       >
         <Acciones tema="depilación láser" />
       </Hero>
@@ -24,24 +23,42 @@ export default function Pagina() {
           <div>
             <h2 className="titulo-seccion">Cómo trabajamos</h2>
             <p>
-              Antes de empezar se evalúa el tipo de piel y de vello para definir
-              el plan y la cantidad de sesiones.
+              Trabajamos con dos equipos: el láser Soprano Ice, que es el que
+              más usamos, y la luz pulsada Harmony. Antes de empezar se evalúa
+              el tipo de piel y de vello para definir con cuál conviene
+              trabajar.
             </p>
-            <p className="nota-chica">
-              <Pendiente>
-                Equipo (el sitio actual nombra Soprano Ice), zonas, packs y
-                cantidad de sesiones a completar por la clínica
-              </Pendiente>
+            <p>
+              Se pueden tratar todas las zonas del cuerpo. Los packs se arman
+              a medida, según lo que necesite cada paciente.
             </p>
           </div>
           <div>
-            <div className="nota sin-margen">
-              <b>Packs por zona</b>
-              <p>
-                Consultanos por los packs disponibles y armamos el que mejor se
-                adapte a lo que necesitás.
-              </p>
+            <div className="ficha clara">
+              <h2>Sesiones</h2>
+              <dl>
+                <div className="fila">
+                  <dt>Cantidad</dt>
+                  <dd>Entre 10 y 12, según cada paciente</dd>
+                </div>
+                <div className="fila">
+                  <dt>Frecuencia</dt>
+                  <dd>Una cada 30 días</dd>
+                </div>
+                <div className="fila">
+                  <dt>Zonas</dt>
+                  <dd>Todo el cuerpo</dd>
+                </div>
+                <div className="fila">
+                  <dt>Packs</dt>
+                  <dd>Personalizados</dd>
+                </div>
+              </dl>
             </div>
+            <p className="nota-chica">
+              La cantidad de sesiones varía porque el crecimiento del vello
+              depende de factores hormonales.
+            </p>
           </div>
         </div>
       </section>

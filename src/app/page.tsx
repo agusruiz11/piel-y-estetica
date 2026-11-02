@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Contacto } from "@/componentes/Bloques";
 import {
   linkWhatsApp,
+  textoRespuesta,
   mostrarPendientes,
   problemas,
   problemasConPagina,
@@ -44,7 +45,7 @@ export default function Home() {
       <header className="h-hero">
         <div className="wrap ancho h-hero-grid">
           <div className="h-hero-texto">
-            <p className="eyebrow">Centro Piel y Estética · Belgrano y Pilar</p>
+            <p className="eyebrow">Centro Piel y Estética · Las Cañitas y Pilar</p>
             <h1>
               Dermatología
               <span className="linea2">y estética</span>
@@ -75,7 +76,7 @@ export default function Home() {
             />
             <div className="h-credencial">
               <b>Dra. Laura Mijelshon</b>
-              <span>Médica dermatóloga · UBA</span>
+              <span>Médica dermatóloga · UBA · M.N. 72517</span>
               <span>Miembro titular de la Sociedad Argentina de Dermatología</span>
             </div>
           </div>
@@ -87,7 +88,7 @@ export default function Home() {
           </div>
           <div>
             <b>2</b>
-            <span>consultorios, en Belgrano y en Pilar</span>
+            <span>consultorios, en Las Cañitas y en Pilar</span>
           </div>
           <div>
             <b>0</b>
@@ -253,7 +254,7 @@ export default function Home() {
             <p className="eyebrow oscuro">Dermatología clínica</p>
             <h3>Consulta dermatológica</h3>
             <p>
-              Presencial en Belgrano y Pilar, o virtual. Atención por OSDE y
+              Presencial en Las Cañitas y Pilar, o virtual. Atención por OSDE y
               Swiss Medical.
             </p>
             <span className="h-dest-ir">Ver la sección</span>
@@ -261,7 +262,7 @@ export default function Home() {
           <Link href="/depilacion" className="h-area">
             <p className="eyebrow oscuro">Depilación</p>
             <h3>Depilación láser</h3>
-            <p>En rostro y cuerpo, con profesionales especializados y packs por zona.</p>
+            <p>En todas las zonas del cuerpo, con láser Soprano Ice y luz pulsada Harmony.</p>
             <span className="h-dest-ir">Ver la sección</span>
           </Link>
         </div>
@@ -272,7 +273,7 @@ export default function Home() {
         <div className="wrap ancho">
           <div className="h-titulo">
             <h2>
-              Dónde estamos<span className="script oscuro">Belgrano y Pilar</span>
+              Dónde estamos<span className="script oscuro">Las Cañitas y Pilar</span>
             </h2>
           </div>
           <div className="h-sedes-grid">
@@ -287,7 +288,7 @@ export default function Home() {
             ))}
             <div>
               <h3>Escribinos</h3>
-              <p>Respondemos de lunes a viernes en horario de atención.</p>
+              <p>{textoRespuesta}</p>
               <a href={linkWhatsApp()} target="_blank" rel="noopener noreferrer" data-evento="clic_whatsapp">
                 WhatsApp
               </a>

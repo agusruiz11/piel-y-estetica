@@ -13,6 +13,18 @@ export const tratamientos: Tratamiento[] = [
     resumen:
       "Relaja el músculo que marca la línea de expresión. Aplicación en consultorio, resultado transitorio.",
     problemas: ["arrugas"],
+    ficha: [
+      { dato: "Duración", valor: "25 minutos" },
+      { dato: "Anestesia", valor: "No requiere" },
+      { dato: "Sesiones", valor: "Una" },
+      { dato: "Reposo", valor: "Sin actividad física ese día" },
+      { dato: "Duración del resultado", valor: "Entre 4 y 6 meses aproximadamente" },
+      { dato: "Requiere", valor: "Consulta de evaluación previa" },
+    ],
+    queEs: [
+      "La toxina botulínica relaja el músculo que marca la línea de expresión. Se aplica en dosis muy pequeñas en zonas como la frente, el entrecejo y el contorno de ojos.",
+      "El procedimiento se hace en consultorio y el efecto es transitorio, por eso se repite cuando el resultado empieza a disminuir.",
+    ],
     enMenu: true,
   },
   {
@@ -23,6 +35,18 @@ export const tratamientos: Tratamiento[] = [
     resumen:
       "Reposición de volumen en pómulos, ojeras, labios y contorno del rostro.",
     problemas: ["surcos", "perdida-volumen"],
+    ficha: [
+      { dato: "Duración", valor: "30 a 40 minutos" },
+      { dato: "Anestesia", valor: "Crema tópica" },
+      { dato: "Sesiones", valor: "Una" },
+      { dato: "Reposo", valor: "Actividad normal" },
+      { dato: "Duración del resultado", valor: "Entre 8 y 10 meses" },
+      { dato: "Requiere", valor: "Consulta de evaluación previa" },
+    ],
+    queEs: [
+      "Los rellenos con ácido hialurónico reponen volumen en pómulos, ojeras, labios y surcos. El ácido hialurónico es una sustancia que la piel produce naturalmente y que se va perdiendo con los años.",
+      "El resultado se ve en la misma sesión y el material se reabsorbe con el tiempo, por eso se puede repetir.",
+    ],
     enMenu: true,
   },
   {
@@ -46,13 +70,13 @@ export const tratamientos: Tratamiento[] = [
       tituloLinea2: "sin cirugía",
       bajada:
         "Corregimos el perfil de la nariz con material de relleno inyectable, en consultorio y sin quirófano. La evaluación médica define si el caso es tratable de esta manera.",
-      aval: "Dra. Laura Mijelshon · Dermatología clínica y estética\nConsultorios en Belgrano y Pilar · Más de 20 años de trayectoria",
+      aval: "Dra. Laura Mijelshon · Dermatología clínica y estética\nConsultorios en Las Cañitas y Pilar · Más de 20 años de trayectoria",
       ficha: [
-        { dato: "Duración", valor: "[[30 a 45 minutos]]" },
-        { dato: "Anestesia", valor: "[[Tópica en crema]]" },
-        { dato: "Sesiones", valor: "[[Una, con control posterior]]" },
-        { dato: "Reposo", valor: "[[Actividad normal el mismo día]]" },
-        { dato: "Duración del resultado", valor: "[[Entre 12 y 18 meses]]" },
+        { dato: "Duración", valor: "30 a 45 minutos" },
+        { dato: "Anestesia", valor: "Tópica en crema" },
+        { dato: "Sesiones", valor: "Una, con control posterior" },
+        { dato: "Reposo", valor: "Actividad normal el mismo día" },
+        { dato: "Duración del resultado", valor: "Entre 9 y 12 meses" },
         { dato: "Requiere", valor: "Consulta de evaluación previa" },
       ],
       queEs: [
@@ -93,7 +117,7 @@ export const tratamientos: Tratamiento[] = [
           "En el centro no realizamos procedimientos quirúrgicos. Cuando la evaluación indica que el caso necesita cirugía, lo decimos en la consulta y derivamos. Preferimos que el paciente lo sepa antes de avanzar.",
       },
       quien: [
-        "Todos los procedimientos inyectables del centro los realiza la Dra. Laura Mijelshon, médica dermatóloga, [[matrícula nacional 00000]]. La evaluación y la aplicación las hace siempre la misma profesional.",
+        "Todos los procedimientos inyectables del centro los realiza la Dra. Laura Mijelshon, médica dermatóloga, M.N. 72517 y M.P. 551449. La evaluación y la aplicación las hace siempre la misma profesional.",
         "Médica dermatóloga recibida en la Universidad de Buenos Aires, miembro titular de la Sociedad Argentina de Dermatología y docente de pre y posgrado en Dermatología.",
       ],
       faqs: [
@@ -110,7 +134,7 @@ export const tratamientos: Tratamiento[] = [
         {
           pregunta: "Cuánto dura el resultado",
           respuesta:
-            "[[Entre 12 y 18 meses]], según el material, la zona y cada paciente. Después se puede repetir la aplicación.",
+            "Entre 9 y 12 meses, según el material, la zona y cada paciente. Después se puede repetir la aplicación.",
         },
         {
           pregunta: "Puedo volver a trabajar el mismo día",
@@ -132,7 +156,6 @@ export const tratamientos: Tratamiento[] = [
     resumen:
       "Plan que combina varios procedimientos para trabajar el conjunto del rostro.",
     problemas: ["perdida-volumen"],
-    aConfirmar: true,
   },
   {
     slug: "skinbooster",
@@ -142,13 +165,20 @@ export const tratamientos: Tratamiento[] = [
     problemas: ["arrugas", "flacidez-facial", "perdida-volumen"],
   },
   {
+    slug: "biorremodelacion",
+    nombre: "Biorremodelación",
+    grupo: "Inyectables",
+    resumen:
+      "Ácido hialurónico de alta concentración que hidrata en profundidad y mejora la firmeza de la piel. Trabajamos con Profhilo.",
+    problemas: ["perdida-volumen", "flacidez-facial"],
+  },
+  {
     slug: "mesoterapia-facial",
     nombre: "Mesoterapia facial",
     grupo: "Inyectables",
     resumen:
       "Aplicación de activos en la piel del rostro para mejorar firmeza e hidratación.",
     problemas: ["arrugas", "flacidez-facial"],
-    aConfirmar: true,
   },
   {
     slug: "hilos-tensores",
@@ -167,16 +197,40 @@ export const tratamientos: Tratamiento[] = [
     grupo: "Aparatología",
     resumen: "Renueva la piel por puntos y trabaja textura, cicatrices y marcas.",
     problemas: ["flacidez-facial", "manchas", "acne-y-cicatrices", "estrias"],
+    ficha: [
+      { dato: "Duración", valor: "40 minutos" },
+      { dato: "Anestesia", valor: "Crema tópica" },
+      { dato: "Sesiones", valor: "De 1 a 3, según cada paciente" },
+      { dato: "Reposo", valor: "Sin sol ni calor las primeras 72 horas" },
+      { dato: "Época del año", valor: "No se recomienda en verano" },
+      { dato: "Duración del resultado", valor: "[[A completar por la clínica]]" },
+    ],
+    queEs: [
+      "El láser CO2 fraccionado renueva la piel por puntos: trata una parte de la superficie y deja piel sana alrededor, lo que ayuda a la recuperación.",
+      "Se usa para mejorar textura, cicatrices, marcas y estrías. Después del tratamiento hay que cuidarse del sol siempre, no solo los primeros días.",
+    ],
     enMenu: true,
   },
   {
     slug: "luz-pulsada",
-    nombre: "Luz pulsada intensa",
-    corto: "Luz pulsada",
+    nombre: "Luz pulsada intensa Harmony",
+    corto: "Luz pulsada Harmony",
     grupo: "Aparatología",
     resumen:
       "Trabaja pigmento y lesiones vasculares, y también se usa para depilación.",
     problemas: ["manchas", "acne-y-cicatrices", "rosacea"],
+    ficha: [
+      { dato: "Duración", valor: "25 minutos" },
+      { dato: "Anestesia", valor: "[[A completar por la clínica]]" },
+      { dato: "Sesiones", valor: "3 a 4, según el estado de la piel" },
+      { dato: "Reposo", valor: "No requiere" },
+      { dato: "Época del año", valor: "No se recomienda en verano" },
+      { dato: "Duración del resultado", valor: "Alrededor de un año" },
+    ],
+    queEs: [
+      "La luz pulsada intensa trabaja con el equipo Harmony. Actúa sobre el pigmento y las lesiones vasculares, y mejora el tono general de la piel.",
+      "Se usa para manchas, rojeces, marcas de acné y también para depilación.",
+    ],
     enMenu: true,
   },
   {
@@ -208,12 +262,11 @@ export const tratamientos: Tratamiento[] = [
     enMenu: true,
   },
   {
-    slug: "limpieza-facial-profunda",
-    nombre: "Limpieza facial profunda",
+    slug: "higiene-facial",
+    nombre: "Higiene facial",
     grupo: "Cuidado de la piel",
-    resumen: "[[Confirmar si se ofrece como servicio con página propia]]",
+    resumen: "Limpieza profunda de la piel del rostro para destapar poros y mejorar su aspecto.",
     problemas: ["acne-y-cicatrices"],
-    aConfirmar: true,
   },
   {
     slug: "consulta-dermatologica",
@@ -232,16 +285,15 @@ export const tratamientos: Tratamiento[] = [
     resumen:
       "Aplicación de activos en el cuero cabelludo, en una serie de sesiones y luego mantenimiento.",
     problemas: ["recuperacion-capilar"],
-    aConfirmar: true,
   },
   {
-    slug: "plasma-capilar",
-    nombre: "Plasma capilar",
+    slug: "plasma-rico-en-plaquetas",
+    nombre: "Plasma rico en plaquetas",
+    corto: "Plasma (PRP)",
     grupo: "Capilar",
     resumen:
-      "Plasma rico en plaquetas obtenido de la sangre del propio paciente, aplicado en el cuero cabelludo.",
-    problemas: ["recuperacion-capilar"],
-    aConfirmar: true,
+      "Plasma obtenido de la sangre del propio paciente, que se aplica en cuero cabelludo, rostro o cuerpo según el caso.",
+    problemas: ["recuperacion-capilar", "flacidez-facial", "celulitis", "flacidez-corporal"],
   },
 
   // ───────── Corporal
@@ -250,34 +302,17 @@ export const tratamientos: Tratamiento[] = [
     nombre: "Radiofrecuencia corporal",
     corto: "Radiofrecuencia",
     grupo: "Corporal",
-    resumen: "[[Equipo y protocolo a confirmar con la clínica]]",
+    resumen:
+      "Radiofrecuencia con el equipo Venus Freeze para mejorar la firmeza y la textura de la piel del cuerpo.",
     problemas: ["celulitis", "estrias", "flacidez-corporal"],
-    aConfirmar: true,
   },
   {
     slug: "modelado-corporal",
-    nombre: "Modelado corporal",
+    nombre: "Vela Slim",
     grupo: "Corporal",
     resumen:
-      "Aparatología que combina vacío, calor y masaje para trabajar contorno y firmeza.",
+      "Equipo que combina vacío, luz infrarroja, radiofrecuencia y masaje para trabajar contorno, celulitis y firmeza.",
     problemas: ["adiposidad-localizada", "celulitis", "flacidez-corporal"],
-    aConfirmar: true,
-  },
-  {
-    slug: "ultracavitacion",
-    nombre: "Ultracavitación",
-    grupo: "Corporal",
-    resumen: "Ultrasonido de baja frecuencia aplicado sobre zonas con grasa localizada.",
-    problemas: ["adiposidad-localizada"],
-    aConfirmar: true,
-  },
-  {
-    slug: "lipolaser",
-    nombre: "Lipolaser",
-    grupo: "Corporal",
-    resumen: "Láser frío no invasivo para zonas puntuales del cuerpo.",
-    problemas: ["adiposidad-localizada", "celulitis"],
-    aConfirmar: true,
   },
   {
     slug: "enzimas",
@@ -285,7 +320,6 @@ export const tratamientos: Tratamiento[] = [
     grupo: "Corporal",
     resumen: "Aplicación de enzimas con efecto drenante sobre zonas localizadas.",
     problemas: ["adiposidad-localizada", "celulitis", "estrias", "flacidez-corporal"],
-    aConfirmar: true,
   },
   {
     slug: "mesoterapia-corporal",
@@ -293,26 +327,24 @@ export const tratamientos: Tratamiento[] = [
     grupo: "Corporal",
     resumen: "Aplicación de activos mediante micropunturas en la zona a tratar.",
     problemas: ["adiposidad-localizada", "celulitis", "flacidez-corporal"],
-    aConfirmar: true,
+  },
+  {
+    slug: "cellulishock",
+    nombre: "Cellulishock",
+    grupo: "Corporal",
+    resumen:
+      "Tratamiento que activa el metabolismo de la zona y mejora la circulación para trabajar la celulitis.",
+    problemas: ["celulitis"],
+  },
+  {
+    slug: "electroestimulacion",
+    nombre: "Electroestimulación",
+    grupo: "Corporal",
+    resumen:
+      "Estimulación muscular que tonifica y da firmeza, y favorece la circulación de la zona.",
+    problemas: ["celulitis", "flacidez-corporal"],
   },
 
-  // ───────── Vascular
-  {
-    slug: "laser-vascular",
-    nombre: "Láser vascular",
-    grupo: "Vascular",
-    resumen: "Láser que actúa sobre el vaso visible, previa evaluación médica.",
-    problemas: ["varices-aranitas"],
-    aConfirmar: true,
-  },
-  {
-    slug: "escleroterapia",
-    nombre: "Escleroterapia",
-    grupo: "Vascular",
-    resumen: "Aplicación de una solución dentro del vaso para cerrarlo.",
-    problemas: ["varices-aranitas"],
-    aConfirmar: true,
-  },
 ];
 
 export const gruposTratamiento = [
@@ -321,5 +353,4 @@ export const gruposTratamiento = [
   "Cuidado de la piel",
   "Capilar",
   "Corporal",
-  "Vascular",
 ] as const;

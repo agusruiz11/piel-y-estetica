@@ -18,17 +18,19 @@ export const sitio = {
   whatsapp: "5491162628742",
   instagram: "https://www.instagram.com/pielyestetica/",
   facebook: "https://www.facebook.com/pielyestetica",
-  sedes: [
+  sedes: <{ nombre: string; direccion: string; mapa: string; horario?: string }[]>[
     {
-      nombre: "Consultorio Belgrano",
-      direccion: "Olleros 1806, 4º A · CABA",
+      nombre: "Consultorio Las Cañitas",
+      direccion: "Olleros 1806, 4º A · Las Cañitas, CABA",
       mapa: "https://www.google.com/maps/search/?api=1&query=Olleros+1806+CABA",
+      horario: "[[Lunes a viernes de 9 a 20 hs]]",
     },
     {
       nombre: "Consultorio Pilar",
       direccion:
-        "Panamericana ramal Pilar km 42,5, Of. 229 · Office Park Quatro",
-      mapa: "https://www.google.com/maps/search/?api=1&query=Office+Park+Quatro+Pilar",
+        "Los Crisantemos 392, Edificio Skyglass 3, Of. 114 · Manuel Alberti, Pilar [[Oficina a confirmar: 114 o 312]]",
+      mapa: "https://www.google.com/maps/search/?api=1&query=Los+Crisantemos+392+Manuel+Alberti",
+      horario: "Miércoles de 10 a 15 hs",
     },
   ],
 };
@@ -40,6 +42,11 @@ export const sitio = {
  */
 export const mostrarPendientes =
   process.env.NEXT_PUBLIC_MOSTRAR_PENDIENTES !== "0";
+
+export const textoRespuesta =
+  "Respondemos todos los mensajes en el día, de lunes a viernes. Si hay mucha demanda, puede demorar unas horas.";
+
+export const matricula = "M.N. 72517 · M.P. 551449";
 
 export function linkWhatsApp(tema?: string) {
   const texto = tema

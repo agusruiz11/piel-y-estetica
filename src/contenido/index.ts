@@ -29,14 +29,14 @@ export function detalleDe(t: Tratamiento): DetalleTratamiento {
     tituloLinea1: t.nombre,
     bajada: t.resumen.replace(/\[\[.*?\]\]/g, "").trim() ||
       "La evaluación médica define si este tratamiento es el indicado para tu caso.",
-    ficha: [
+    ficha: t.ficha ?? [
       { dato: "Duración", valor: aCompletar },
       { dato: "Sesiones", valor: aCompletar },
       { dato: "Reposo", valor: aCompletar },
       { dato: "Duración del resultado", valor: aCompletar },
       { dato: "Requiere", valor: "Consulta de evaluación previa" },
     ],
-    queEs: [
+    queEs: t.queEs ?? [
       t.resumen,
       "[[Descripción completa a redactar a partir del sitio actual y con validación de la doctora]]",
     ],

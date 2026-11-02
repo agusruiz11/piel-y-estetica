@@ -56,8 +56,8 @@ export function Formulario({
       </div>
       <div>
         <label htmlFor="consultorio">Consultorio de preferencia</label>
-        <select id="consultorio" name="consultorio" defaultValue="Belgrano">
-          <option>Belgrano</option>
+        <select id="consultorio" name="consultorio" defaultValue="Las Cañitas">
+          <option>Las Cañitas</option>
           <option>Pilar</option>
           {opcionesExtra.map((o) => (
             <option key={o}>{o}</option>

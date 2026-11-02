@@ -116,7 +116,7 @@ export const problemas: Problema[] = [
         indicado: "Todos los casos",
         nombre: "Cuidado domiciliario",
         texto:
-          "[[Definir si se comunica el esquema de despigmentantes y fotoprotección]]",
+          "Siempre bajo control médico, se arma una rutina con cremas despigmentantes, humectantes y protector solar.",
       },
     ],
     nota: "Eso se define en la consulta. El tipo de mancha, el tono de piel y la época del año cambian la indicación, y en muchos casos el plan combina más de un tratamiento con un esquema de cuidado en casa.",
@@ -134,7 +134,7 @@ export const problemas: Problema[] = [
       {
         pregunta: "Cuántas sesiones necesito",
         respuesta:
-          "Depende del tipo de mancha y de la tecnología que se indique. [[Rango orientativo a completar por la clínica]]",
+          "Depende de cada paciente: el tipo de mancha y la respuesta de la piel definen cuántas sesiones hacen falta.",
       },
       {
         pregunta: "Las manchas vuelven",
@@ -144,7 +144,7 @@ export const problemas: Problema[] = [
       {
         pregunta: "Se puede hacer en verano",
         respuesta:
-          "[[Respuesta a definir con la doctora, incluye la indicación estacional de cada tecnología]]",
+          "No se recomienda hacer luz pulsada ni láser CO2 en verano. La doctora indica en la consulta cuál es el mejor momento para cada caso.",
       },
       {
         pregunta: "Cuánto cuesta",
@@ -237,16 +237,6 @@ export const problemas: Problema[] = [
     tituloLinea2: "corporal",
     bajada:
       "La firmeza de la piel del cuerpo se trabaja con aparatología y bioestimulación. La evaluación define el plan según la zona.",
-  },
-  {
-    slug: "varices-aranitas",
-    nombre: "Várices y arañitas",
-    grupo: "Cuerpo",
-    resumen: "Vasos visibles en piernas, evaluados en consulta antes de tratar.",
-    tituloLinea1: "Várices",
-    tituloLinea2: "y arañitas",
-    bajada:
-      "Los vasos visibles en las piernas se evalúan en consulta antes de indicar cualquier tratamiento.",
   },
   {
     slug: "vello-no-deseado",

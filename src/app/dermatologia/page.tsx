@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Contacto, Faqs, Hero, Retrato } from "@/componentes/Bloques";
 import { Pendiente } from "@/componentes/Texto";
-import { linkWhatsApp } from "@/contenido";
+import { linkWhatsApp, matricula } from "@/contenido";
 
 export const metadata: Metadata = {
-  title: "Dermatología en Belgrano y Pilar",
+  title: "Dermatología en Las Cañitas y Pilar",
   description:
-    "Consulta dermatológica presencial en Belgrano y Pilar, o virtual. Equipo de dermatólogos. Atención por OSDE y Swiss Medical.",
+    "Consulta dermatológica presencial en Las Cañitas y Pilar, o virtual. Equipo de dermatólogos. Atención por OSDE y Swiss Medical.",
   alternates: { canonical: "/dermatologia" },
 };
 
@@ -17,6 +17,10 @@ const motivos = [
   { texto: "Rosácea y enrojecimiento", href: "/rosacea" },
   { texto: "Manchas en la piel", href: "/manchas" },
   { texto: "Caída del cabello", href: "/recuperacion-capilar" },
+  { texto: "Cicatrices", href: "/acne-y-cicatrices" },
+  { texto: "Arrugas", href: "/arrugas" },
+  { texto: "Flacidez", href: "/flacidez-facial" },
+  { texto: "Celulitis", href: "/celulitis" },
   { texto: "Lesiones que cambian o no cicatrizan" },
 ];
 
@@ -24,20 +28,22 @@ const faqs = [
   {
     pregunta: "Atienden por obra social o prepaga",
     respuesta:
-      "Sí, trabajamos con OSDE y Swiss Medical. Si tu cobertura no está en el listado, escribinos y te contamos las opciones. [[Planes incluidos y modalidad a confirmar]]",
+      "Sí, en las dos sedes. Con OSDE atendemos los planes 210, 260, 700, 030, 310, 360, 410, 430 y 450, y la criocirugía también tiene cobertura. Con Swiss Medical la consulta tiene copago. Con otras coberturas, la consulta es particular.",
   },
   {
     pregunta: "Cómo es la consulta virtual",
     respuesta:
-      "[[Plataforma, duración y qué motivos de consulta se pueden resolver a distancia, a completar por la clínica]]",
+      "Es una consulta particular, de unos 20 minutos. [[Medio por el que se hace y motivos que se pueden atender a distancia]]",
   },
   {
     pregunta: "Cada cuánto conviene hacer un control de lunares",
-    respuesta: "[[Respuesta a redactar con la doctora]]",
+    respuesta:
+      "La recomendación es hacer un control de lunares una vez al año, o antes si notás algún cambio.",
   },
   {
     pregunta: "Puedo consultar por dermatología y por estética en el mismo turno",
-    respuesta: "[[A confirmar cómo se organizan los turnos]]",
+    respuesta:
+      "Preferentemente se dan en turnos separados. Si vivís lejos o en otra ciudad, consultanos y vemos de organizarlo en una sola visita.",
   },
 ];
 
@@ -48,7 +54,7 @@ export default function Pagina() {
         eyebrow="Dermatología clínica"
         linea1="Consulta"
         linea2="dermatológica"
-        bajada="Un equipo de dermatólogos atiende consultas y trata afecciones de la piel. Podés venir a Belgrano o a Pilar, o hacer la consulta de forma virtual."
+        bajada="Un equipo de dermatólogos atiende consultas y trata afecciones de la piel. Podés venir a Las Cañitas o a Pilar, o hacer la consulta de forma virtual."
         lateral={
           <div className="ficha">
             <h2>La consulta</h2>
@@ -59,7 +65,7 @@ export default function Pagina() {
               </div>
               <div className="fila">
                 <dt>Consultorios</dt>
-                <dd>Belgrano y Pilar</dd>
+                <dd>Las Cañitas y Pilar</dd>
               </div>
               <div className="fila">
                 <dt>Atiende</dt>
@@ -72,7 +78,9 @@ export default function Pagina() {
               <div className="fila">
                 <dt>Días y horarios</dt>
                 <dd>
-                  <Pendiente>Lunes a viernes, horario a completar</Pendiente>
+                  Las Cañitas: <Pendiente>lunes a viernes de 9 a 20 hs</Pendiente>
+                  <br />
+                  Pilar: miércoles de 10 a 15 hs
                 </dd>
               </div>
             </dl>
@@ -94,8 +102,9 @@ export default function Pagina() {
           </a>
         </div>
         <p className="aval">
-          Dra. Laura Mijelshon · Médica dermatóloga, miembro titular de la
-          Sociedad Argentina de Dermatología
+          Dra. Laura Mijelshon · Médica dermatóloga · {matricula}
+          <br />
+          Miembro titular de la Sociedad Argentina de Dermatología
         </p>
       </Hero>
 
@@ -123,9 +132,6 @@ export default function Pagina() {
                 </li>
               ))}
             </ul>
-            <p className="nota-chica">
-              <Pendiente>Listado a validar por la Dra. Mijelshon</Pendiente>
-            </p>
           </div>
         </div>
       </section>
@@ -140,19 +146,23 @@ export default function Pagina() {
           <div className="tipos sobre-claro">
             <div className="tipo">
               <span className="causa">Presencial</span>
-              <h3>Consultorio Belgrano</h3>
+              <h3>Consultorio Las Cañitas</h3>
               <p>Olleros 1806, 4º A, CABA.</p>
             </div>
             <div className="tipo">
               <span className="causa">Presencial</span>
               <h3>Consultorio Pilar</h3>
-              <p>Panamericana ramal Pilar km 42,5, Of. 229, Office Park Quatro.</p>
+              <p>
+                Los Crisantemos 392, Edificio Skyglass 3, Of. 114, Manuel
+                Alberti, Pilar. <Pendiente>Oficina 114 o 312</Pendiente>
+              </p>
             </div>
             <div className="tipo">
               <span className="causa">A distancia</span>
               <h3>Consulta virtual</h3>
               <p>
-                Desde donde estés. <Pendiente>Plataforma y alcance</Pendiente>
+                Consulta particular de unos 20 minutos, desde donde estés.{" "}
+                <Pendiente>Medio y alcance</Pendiente>
               </p>
             </div>
           </div>
@@ -178,10 +188,12 @@ export default function Pagina() {
               >
                 escribinos por WhatsApp
               </a>{" "}
-              y te contamos cómo podés atenderte.
+              y te contamos cómo atenderte de forma particular.
             </p>
             <p className="nota-chica">
-              <Pendiente>Planes incluidos y si aplica a las dos sedes</Pendiente>
+              OSDE: planes 210, 260, 700, 030, 310, 360, 410, 430 y 450. Swiss
+              Medical: consulta con copago. Atendemos con las dos coberturas en
+              Las Cañitas y en Pilar.
             </p>
           </div>
           <div>

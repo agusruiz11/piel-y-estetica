@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: `%s | ${sitio.nombre}`,
   },
   description:
-    "Dermatología clínica y estética en Belgrano y Pilar. Tratamientos faciales y corporales con evaluación médica previa.",
+    "Dermatología clínica y estética en Las Cañitas y Pilar. Tratamientos faciales y corporales con evaluación médica previa.",
   robots: indexable ? undefined : { index: false, follow: false },
   openGraph: { siteName: sitio.nombre, locale: "es_AR", type: "website" },
   twitter: { card: "summary_large_image" },

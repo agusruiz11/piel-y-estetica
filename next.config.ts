@@ -22,6 +22,8 @@ const nextConfig: NextConfig = {
       { source: "/acerca-de", destination: "/nosotros", permanent: true },
       { source: "/donde-estamos", destination: "/contacto", permanent: true },
       { source: "/lesione-pigmentarias", destination: "/manchas", permanent: true },
+      { source: "/varices-aranitas", destination: "/dermatologia", permanent: true },
+      { source: "/varices", destination: "/dermatologia", permanent: true },
       { source: "/paquete-verano", destination: "/adiposidad-localizada", permanent: true },
       ...aInicio.map((source) => ({ source, destination: "/", permanent: true })),
     ];

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Contacto, Hero, Retrato, Slot } from "@/componentes/Bloques";
-import { Pendiente } from "@/componentes/Texto";
 
 export const metadata: Metadata = {
   title: "Nosotros",
@@ -39,7 +38,7 @@ export default function Pagina() {
                 ))}
               </ul>
               <p className="nota-chica">
-                <Pendiente>Matrícula nacional a completar</Pendiente>
+                Médica dermatóloga · M.N. 72517 · M.P. 551449
               </p>
             </div>
           </div>

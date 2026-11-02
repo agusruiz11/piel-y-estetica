@@ -4,6 +4,7 @@ import {
   sitio,
   mostrarPendientes,
   linkWhatsApp,
+  textoRespuesta,
   urlProblema,
   urlTratamiento,
   problemasDe,
@@ -58,7 +59,7 @@ export function Pie() {
           <p className="pie-titulo">Consultorios</p>
           {sitio.sedes.map((s) => (
             <a key={s.nombre} href={s.mapa} target="_blank" rel="noopener noreferrer">
-              {s.direccion}
+              {s.direccion.replace(/\s*\[\[.*?\]\]/g, "")}
             </a>
           ))}
         </div>
@@ -200,13 +201,20 @@ export function Contacto({
         <div>
           <h2 className="titulo-seccion">{titulo}</h2>
           <p>
-            Dejanos tus datos y te contactamos para coordinar día y horario.
-            Respondemos de lunes a viernes en horario de atención.
+            Dejanos tus datos y te contactamos para coordinar día y horario.{" "}
+            {textoRespuesta}
           </p>
           {sitio.sedes.map((s) => (
             <div className="sede" key={s.nombre}>
               <b>{s.nombre}</b>
-              <span>{s.direccion}</span>{" "}
+              <span>
+                <Texto>{s.direccion}</Texto>
+              </span>
+              {s.horario && (
+                <span className="sede-horario">
+                  <Texto>{s.horario}</Texto>
+                </span>
+              )}{" "}
               <a href={s.mapa} target="_blank" rel="noopener noreferrer">
                 Ver en el mapa
               </a>

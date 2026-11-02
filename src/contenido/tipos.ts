@@ -8,8 +8,7 @@ export type GrupoTratamiento =
   | "Aparatología"
   | "Cuidado de la piel"
   | "Capilar"
-  | "Corporal"
-  | "Vascular";
+  | "Corporal";
 
 export type DetalleTratamiento = {
   tituloLinea1: string;
@@ -38,8 +37,11 @@ export type Tratamiento = {
   aConfirmar?: boolean;
   /** Si tiene página en otra ruta (por ejemplo Dermatología). */
   destino?: string;
-  /** Contenido de la página propia. Sin detalle, la tarjeta no linkea. */
+  /** Contenido completo de la página propia. */
   detalle?: DetalleTratamiento;
+  /** Datos confirmados que se usan cuando todavía no hay detalle completo. */
+  ficha?: { dato: string; valor: string }[];
+  queEs?: string[];
   /** Aparece en el menú desplegable. */
   enMenu?: boolean;
 };

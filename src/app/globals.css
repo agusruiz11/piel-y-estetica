@@ -400,3 +400,11 @@ select option { color: var(--marino); }
   .h-credencial { position: static; max-width: none; box-shadow: none; }
   .h-hero-foto::before { display: none; }
 }
+
+/* Ficha sobre fondo claro (Depilación) */
+.ficha.clara { border-color: var(--linea); background: var(--papel); }
+.ficha.clara h2 { color: #1c8a91; }
+.ficha.clara .fila { border-bottom-color: var(--linea); }
+.ficha.clara dt { color: var(--gris); }
+.ficha.clara dd { color: var(--marino); }
+.sede-horario { display: block; color: var(--menta); font-size: 0.86rem; margin-top: 0.2rem; }

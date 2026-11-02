@@ -16,7 +16,7 @@ export default function Pagina() {
       eyebrow="Consulta enviada"
       linea1="Recibimos"
       linea2="tu consulta"
-      bajada="Te contactamos dentro del horario de atención, de lunes a viernes, para coordinar día y horario."
+      bajada="Te contactamos para coordinar día y horario. Respondemos todos los mensajes en el día, de lunes a viernes. Si hay mucha demanda, puede demorar unas horas."
     >
       <div className="acciones">
         <Link className="btn primario" href="/tratamientos">

@@ -78,7 +78,7 @@ export default function Pagina() {
               <div className="fila">
                 <dt>Días y horarios</dt>
                 <dd>
-                  Las Cañitas: <Pendiente>lunes a viernes de 9 a 20 hs</Pendiente>
+                  Las Cañitas: lunes a viernes de 9 a 20 hs
                   <br />
                   Pilar: miércoles de 10 a 15 hs
                 </dd>
@@ -145,16 +145,17 @@ export default function Pagina() {
           </p>
           <div className="tipos sobre-claro">
             <div className="tipo">
-              <span className="causa">Presencial</span>
+              <span className="causa">Sede principal</span>
               <h3>Consultorio Las Cañitas</h3>
-              <p>Olleros 1806, 4º A, CABA.</p>
+              <p>Olleros 1806, 4º A, CABA. Lunes a viernes de 9 a 20 hs.</p>
             </div>
             <div className="tipo">
-              <span className="causa">Presencial</span>
+              <span className="causa">Los miércoles</span>
               <h3>Consultorio Pilar</h3>
               <p>
                 Los Crisantemos 392, Edificio Skyglass 3, Of. 114, Manuel
-                Alberti, Pilar. <Pendiente>Oficina 114 o 312</Pendiente>
+                Alberti, Pilar. De 10 a 15 hs.{" "}
+                <Pendiente>Oficina 114 o 312</Pendiente>
               </p>
             </div>
             <div className="tipo">

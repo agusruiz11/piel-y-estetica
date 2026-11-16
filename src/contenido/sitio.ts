@@ -23,12 +23,12 @@ export const sitio = {
       nombre: "Consultorio Las Cañitas",
       direccion: "Olleros 1806, 4º A · Las Cañitas, CABA",
       mapa: "https://www.google.com/maps/search/?api=1&query=Olleros+1806+CABA",
-      horario: "[[Lunes a viernes de 9 a 20 hs]]",
+      horario: "Lunes a viernes de 9 a 20 hs",
     },
     {
       nombre: "Consultorio Pilar",
       direccion:
-        "Los Crisantemos 392, Edificio Skyglass 3, Of. 114 · Manuel Alberti, Pilar [[Oficina a confirmar: 114 o 312]]",
+        "Los Crisantemos 392, Edificio Skyglass 3 · Manuel Alberti, Pilar [[Oficina a confirmar: 114 o 312]]",
       mapa: "https://www.google.com/maps/search/?api=1&query=Los+Crisantemos+392+Manuel+Alberti",
       horario: "Miércoles de 10 a 15 hs",
     },

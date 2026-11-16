@@ -70,7 +70,7 @@ export default async function Pagina({ params }: Props) {
                 </div>
               ))}
             </div>
-            {p.tipos.nota && (
+            {p.tipos.nota && !quedaVacio(p.tipos.nota) && (
               <p className="nota-chica">
                 <Texto>{p.tipos.nota}</Texto>
               </p>

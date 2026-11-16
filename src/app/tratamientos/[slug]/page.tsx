@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Acciones, Contacto, Faqs, Hero, Retrato, Slot } from "@/componentes/Bloques";
-import { Texto } from "@/componentes/Texto";
+import { Texto, quedaVacio } from "@/componentes/Texto";
 import Link from "next/link";
 import { detalleDe, problemasDe, tratamientosConPagina, urlProblema } from "@/contenido";
 
@@ -45,7 +45,7 @@ export default async function Pagina({ params }: Props) {
           <div className="ficha">
             <h2>Ficha del procedimiento</h2>
             <dl>
-              {d.ficha.map((f) => (
+              {d.ficha.filter((f) => !quedaVacio(f.valor)).map((f) => (
                 <div className="fila" key={f.dato}>
                   <dt>{f.dato}</dt>
                   <dd>
@@ -65,7 +65,7 @@ export default async function Pagina({ params }: Props) {
         <div className="wrap dos">
           <div>
             <h2 className="titulo-seccion">Qué es</h2>
-            {d.queEs.map((p) => (
+            {d.queEs.filter((p) => !quedaVacio(p)).map((p) => (
               <p key={p}>
                 <Texto>{p}</Texto>
               </p>
@@ -91,7 +91,7 @@ export default async function Pagina({ params }: Props) {
                   <li key={i}>{i}</li>
                 ))}
               </ul>
-              {d.corrige.nota && (
+              {d.corrige.nota && !quedaVacio(d.corrige.nota) && (
                 <p className="nota-chica">
                   <Texto>{d.corrige.nota}</Texto>
                 </p>

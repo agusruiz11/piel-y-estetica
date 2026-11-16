@@ -13,6 +13,7 @@ import {
   type Problema,
   type Tratamiento,
 } from "@/contenido";
+import { matricula } from "@/contenido/sitio";
 import { Texto, quedaVacio } from "./Texto";
 import { Formulario } from "./Formulario";
 
@@ -79,7 +80,28 @@ export function Pie() {
         </div>
       </div>
       <div className="wrap ancho pie-base">
-        {sitio.nombre} · {sitio.doctora}
+        <div className="pie-legal">
+          <p>
+            © {new Date().getFullYear()} {sitio.nombre}. Todos los derechos reservados.
+          </p>
+          <p>
+            Directora médica: {sitio.doctora}, médica dermatóloga · {matricula}
+          </p>
+          <p>La información de este sitio es orientativa y no reemplaza la consulta médica.</p>
+        </div>
+        <a
+          className="pie-credito"
+          href="https://posicionarte.online/?utm_source=pielyestetica.com&utm_medium=referral&utm_campaign=credito_footer"
+          target="_blank"
+          rel="noopener"
+          aria-label="Sitio hecho por Posicionarte"
+        >
+          <span>Hecho por</span>
+          <span className="pie-credito-logo">
+            <Image src="/posicionarte-mono.png" alt="" width={700} height={125} sizes="130px" className="mono" />
+            <Image src="/posicionarte-color.png" alt="Posicionarte" width={700} height={125} sizes="130px" className="color" />
+          </span>
+        </a>
       </div>
     </footer>
   );

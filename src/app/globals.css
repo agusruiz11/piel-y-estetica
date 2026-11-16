@@ -244,7 +244,16 @@ select option { color: var(--marino); }
 .pie-titulo { font-family: var(--sub); font-weight: 700; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--menta); margin: 0 0 0.8rem !important; }
 .pie a { display: block; color: #cfe0e6; text-decoration: none; padding: 0.22rem 0; }
 .pie a:hover { color: var(--menta); text-decoration: underline; }
-.pie-base { border-top: 1px solid rgba(140, 203, 196, 0.18); margin-top: 2.4rem; padding-top: 1.2rem; font-size: 0.78rem; }
+.pie-base { border-top: 1px solid rgba(140, 203, 196, 0.18); margin-top: 2.4rem; padding-top: 1.2rem; font-size: 0.78rem; display: flex; justify-content: space-between; align-items: flex-end; gap: 1.6rem; flex-wrap: wrap; }
+.pie-legal p { max-width: none; margin: 0 0 0.3rem; }
+.pie-legal p:last-child { margin-bottom: 0; opacity: 0.8; }
+.pie a.pie-credito { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0; color: #8fa7b1; font-size: 0.74rem; text-decoration: none; }
+.pie a.pie-credito:hover { color: #cfe0e6; text-decoration: none; }
+.pie-credito-logo { position: relative; display: block; height: 22px; aspect-ratio: 700 / 125; }
+.pie-credito-logo img { position: absolute; inset: 0; width: 100%; height: 100%; transition: opacity 0.25s ease; }
+.pie-credito-logo .color { opacity: 0; }
+.pie-credito:hover .color, .pie-credito:focus-visible .color { opacity: 1; }
+.pie-credito:hover .mono, .pie-credito:focus-visible .mono { opacity: 0; }
 .retrato-foto { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 15%; display: block; border-bottom: 4px solid var(--menta); }
 
 /* ───────── Home ───────── */

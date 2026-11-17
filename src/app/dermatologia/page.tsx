@@ -41,7 +41,8 @@ const faqs = [
       "La recomendación es hacer un control de lunares una vez al año, o antes si notás algún cambio.",
   },
   {
-    pregunta: "Puedo consultar por dermatología y por estética en el mismo turno",
+    pregunta:
+      "Puedo consultar por dermatología y por estética en el mismo turno",
     respuesta:
       "Preferentemente se dan en turnos separados. Si vivís lejos o en otra ciudad, consultanos y vemos de organizarlo en una sola visita.",
   },
@@ -111,7 +112,9 @@ export default function Pagina() {
       <section>
         <div className="wrap dos">
           <div>
-            <h2 className="titulo-seccion">Un equipo formado por dermatólogos</h2>
+            <h2 className="titulo-seccion">
+              Un equipo formado por dermatólogos
+            </h2>
             <p>
               El equipo del Centro Piel y Estética está compuesto por
               dermatólogos con experiencia que atienden consultas y tratan
@@ -138,32 +141,18 @@ export default function Pagina() {
 
       <section className="claro">
         <div className="wrap">
-          <h2 className="titulo-seccion">Cómo podés atenderte</h2>
-          <p className="intro">
-            Elegí la modalidad que te quede más cómoda. Al pedir el turno nos
-            indicás cuál preferís.
-          </p>
-          <div className="tipos sobre-claro">
-            <div className="tipo">
-              <span className="causa">Sede principal</span>
-              <h3>Consultorio Las Cañitas</h3>
-              <p>Olleros 1806, 4º A, CABA. Lunes a viernes de 9 a 20 hs.</p>
-            </div>
-            <div className="tipo">
-              <span className="causa">Los miércoles</span>
-              <h3>Consultorio Pilar</h3>
+          <div className="pro">
+            <Retrato foto="escritorio" />
+            <div>
+              <h2 className="titulo-seccion">Quién dirige el equipo</h2>
               <p>
-                Los Crisantemos 392, Edificio Skyglass 3, Of. 114, Manuel
-                Alberti, Pilar. De 10 a 15 hs.{" "}
-                <Pendiente>Oficina 114 o 312</Pendiente>
+                La Dra. Laura Mijelshon es médica dermatóloga recibida en la
+                Universidad de Buenos Aires, miembro titular de la Sociedad
+                Argentina de Dermatología y docente de pre y posgrado en
+                Dermatología. Dirige el centro desde hace más de 20 años.
               </p>
-            </div>
-            <div className="tipo">
-              <span className="causa">A distancia</span>
-              <h3>Consulta virtual</h3>
               <p>
-                Consulta particular de unos 20 minutos, desde donde estés.{" "}
-                <Pendiente>Medio y alcance</Pendiente>
+                <Link href="/nosotros">Conocé al equipo</Link>
               </p>
             </div>
           </div>
@@ -204,7 +193,9 @@ export default function Pagina() {
               <ul>
                 <li>Una mancha o lunar que cambió de tamaño, forma o color</li>
                 <li>Bordes irregulares o varios colores en la misma lesión</li>
-                <li>Sangrado, picazón o una lesión que no termina de cicatrizar</li>
+                <li>
+                  Sangrado, picazón o una lesión que no termina de cicatrizar
+                </li>
               </ul>
             </div>
           </div>
@@ -213,18 +204,32 @@ export default function Pagina() {
 
       <section className="claro">
         <div className="wrap">
-          <div className="pro">
-            <Retrato />
-            <div>
-              <h2 className="titulo-seccion">Quién dirige el equipo</h2>
+          <h2 className="titulo-seccion">Cómo podés atenderte</h2>
+          <p className="intro">
+            Elegí la modalidad que te quede más cómoda. Al pedir el turno nos
+            indicás cuál preferís.
+          </p>
+          <div className="tipos sobre-claro">
+            <div className="tipo">
+              <span className="causa">Sede principal</span>
+              <h3>Consultorio Las Cañitas</h3>
+              <p>Olleros 1806, 4º A, CABA. Lunes a viernes de 9 a 20 hs.</p>
+            </div>
+            <div className="tipo">
+              <span className="causa">Los miércoles</span>
+              <h3>Consultorio Pilar</h3>
               <p>
-                La Dra. Laura Mijelshon es médica dermatóloga recibida en la
-                Universidad de Buenos Aires, miembro titular de la Sociedad
-                Argentina de Dermatología y docente de pre y posgrado en
-                Dermatología. Dirige el centro desde hace más de 20 años.
+                Los Crisantemos 392, Edificio Skyglass 3, Of. 114, Manuel
+                Alberti, Pilar. De 10 a 15 hs.{" "}
+                <Pendiente>Oficina 114 o 312</Pendiente>
               </p>
+            </div>
+            <div className="tipo">
+              <span className="causa">A distancia</span>
+              <h3>Consulta virtual</h3>
               <p>
-                <Link href="/nosotros">Conocé al equipo</Link>
+                Consulta particular de unos 20 minutos, desde donde estés.{" "}
+                <Pendiente>Medio y alcance</Pendiente>
               </p>
             </div>
           </div>

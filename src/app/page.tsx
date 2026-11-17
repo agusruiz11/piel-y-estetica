@@ -18,22 +18,27 @@ const destacados = ["toxina-botulinica", "bioestimulacion", "rinomodelacion"];
 const pasos = [
   {
     titulo: "Evaluación",
-    texto: "La doctora revisa tu piel, repasa antecedentes y escucha qué te gustaría mejorar.",
+    texto:
+      "La doctora revisa tu piel, repasa antecedentes y escucha qué te gustaría mejorar.",
   },
   {
     titulo: "Plan",
-    texto: "Se define qué tratamiento corresponde, en qué orden y con qué cuidados en casa.",
+    texto:
+      "Se define qué tratamiento corresponde, en qué orden y con qué cuidados en casa.",
   },
   {
     titulo: "Seguimiento",
-    texto: "Controles pautados para revisar la evolución y ajustar si el caso lo requiere.",
+    texto:
+      "Controles pautados para revisar la evolución y ajustar si el caso lo requiere.",
   },
 ];
 
 export default function Home() {
   const rostro = problemas.filter((p) => p.grupo === "Rostro");
   const cuerpo = problemas.filter((p) => p.grupo === "Cuerpo");
-  const visibles = tratamientos.filter((t) => mostrarPendientes || !t.aConfirmar);
+  const visibles = tratamientos.filter(
+    (t) => mostrarPendientes || !t.aConfirmar,
+  );
   const conocidos = visibles.filter((t) => t.enMenu);
   const estrella = destacados
     .map((slug) => tratamientos.find((t) => t.slug === slug))
@@ -45,7 +50,9 @@ export default function Home() {
       <header className="h-hero">
         <div className="wrap ancho h-hero-grid">
           <div className="h-hero-texto">
-            <p className="eyebrow">Centro Piel y Estética · Las Cañitas y Pilar</p>
+            <p className="eyebrow">
+              Centro Piel y Estética · Las Cañitas y Pilar
+            </p>
             <h1>
               Dermatología
               <span className="linea2">y estética</span>
@@ -67,18 +74,29 @@ export default function Home() {
           </div>
           <div className="h-hero-foto">
             <Image
-              src="/retrato-dra-mijelshon.jpg"
-              alt="Dra. Laura Mijelshon en su consultorio"
-              width={1200}
-              height={1500}
-              sizes="(max-width: 900px) 78vw, 420px"
+              src="/consultorio-recepcion-2.jpg"
+              alt="Sala de espera y recepción del Centro Piel y Estética"
+              width={1400}
+              height={1400}
+              sizes="(max-width: 900px) 92vw, 560px"
               priority
             />
-            <div className="h-credencial">
-              <b>Dra. Laura Mijelshon</b>
-              <span>Médica dermatóloga · UBA · M.N. 72517</span>
-              <span>Miembro titular de la Sociedad Argentina de Dermatología</span>
-            </div>
+            <a
+              className="h-credencial"
+              href="#quien-te-atiende"
+              aria-label="Ver quién te atiende: Dra. Laura Mijelshon"
+            >
+              <span className="h-cred-simbolo" aria-hidden="true" />
+              <div>
+                <b>Dra. Laura Mijelshon</b>
+                <span>
+                  Directora médica · Médica dermatóloga · UBA · M.N. 72517
+                </span>
+                <span>
+                  Miembro titular de la Sociedad Argentina de Dermatología
+                </span>
+              </div>
+            </a>
           </div>
         </div>
         <div className="wrap ancho h-datos">
@@ -119,7 +137,10 @@ export default function Home() {
         <div className="wrap ancho">
           <div className="h-titulo">
             <h2>
-              Dos caminos<span className="script oscuro">para llegar a tu tratamiento</span>
+              Dos caminos
+              <span className="script oscuro">
+                para llegar a tu tratamiento
+              </span>
             </h2>
             <p>
               Podés empezar por lo que te preocupa o por el tratamiento que ya
@@ -178,7 +199,9 @@ export default function Home() {
           <div className="h-dest-grid">
             {estrella.map((t, i) => (
               <Link className="h-dest" key={t.slug} href={urlTratamiento(t)}>
-                <span className="h-dest-n">{String(i + 1).padStart(2, "0")}</span>
+                <span className="h-dest-n">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
                 <h3>{t.nombre}</h3>
                 <p>{t.resumen}</p>
                 <span className="h-dest-ir">Ver tratamiento</span>
@@ -191,7 +214,7 @@ export default function Home() {
       {/* Cómo trabajamos */}
       <section className="h-metodo">
         <div className="wrap ancho">
-          <div className="h-titulo sobre-marino">
+          <div className="h-titulo">
             <h2>
               Cómo trabajamos<span className="script">paso a paso</span>
             </h2>
@@ -217,14 +240,14 @@ export default function Home() {
       </section>
 
       {/* La doctora */}
-      <section className="h-doctora">
+      <section className="h-doctora" id="quien-te-atiende">
         <div className="wrap ancho h-doctora-grid">
           <div className="h-doctora-foto">
             <Image
-              src="/retrato-dra-mijelshon.jpg"
-              alt="Dra. Laura Mijelshon"
-              width={1200}
-              height={1500}
+              src="/dra-mijelshon-home.jpg"
+              alt="Dra. Laura Mijelshon en el consultorio"
+              width={1400}
+              height={1750}
               sizes="(max-width: 900px) 80vw, 440px"
             />
           </div>
@@ -236,9 +259,14 @@ export default function Home() {
               responsabilidad y respeto por sus pacientes.
             </p>
             <ul className="corrige una">
-              <li>Médica dermatóloga recibida en la Universidad de Buenos Aires</li>
+              <li>
+                Médica dermatóloga recibida en la Universidad de Buenos Aires
+              </li>
               <li>Miembro titular de la Sociedad Argentina de Dermatología</li>
-              <li>Docente de pre y posgrado en Dermatología (UBA y Universidad del Salvador)</li>
+              <li>
+                Docente de pre y posgrado en Dermatología (UBA y Universidad del
+                Salvador)
+              </li>
             </ul>
             <p className="h-link">
               <Link href="/nosotros">Conocé al equipo</Link>
@@ -262,7 +290,10 @@ export default function Home() {
           <Link href="/depilacion" className="h-area">
             <p className="eyebrow oscuro">Depilación</p>
             <h3>Depilación láser</h3>
-            <p>En todas las zonas del cuerpo, con láser Soprano Ice y luz pulsada Harmony.</p>
+            <p>
+              En todas las zonas del cuerpo, con láser Soprano Ice y luz pulsada
+              Harmony.
+            </p>
             <span className="h-dest-ir">Ver la sección</span>
           </Link>
         </div>
@@ -270,31 +301,52 @@ export default function Home() {
 
       {/* Consultorios */}
       <section className="h-sedes">
-        <div className="wrap ancho">
-          <div className="h-titulo">
-            <h2>
-              Dónde estamos<span className="script oscuro">Las Cañitas y Pilar</span>
-            </h2>
-          </div>
-          <div className="h-sedes-grid">
-            {sitio.sedes.map((s) => (
-              <div key={s.nombre}>
-                <h3>{s.nombre}</h3>
-                <p>{s.direccion}</p>
-                <a href={s.mapa} target="_blank" rel="noopener noreferrer">
-                  Ver en el mapa
+        <div className="wrap ancho h-sedes-layout">
+          <figure className="h-sedes-foto">
+            <Image
+              src="/recepcion-piel-y-estetica.jpg"
+              alt="Recepción del Centro Piel y Estética en Las Cañitas"
+              width={1400}
+              height={1750}
+              sizes="(max-width: 900px) 92vw, 460px"
+            />
+          </figure>
+          <div>
+            <div className="h-titulo">
+              <h2>
+                Dónde estamos
+                <span className="script oscuro">Las Cañitas y Pilar</span>
+              </h2>
+            </div>
+            <div className="h-sedes-grid">
+              {sitio.sedes.map((s) => (
+                <div key={s.nombre}>
+                  <h3>{s.nombre}</h3>
+                  <p>{s.direccion.replace(/\s*\[\[.*?\]\]/g, "")}</p>
+                  <a href={s.mapa} target="_blank" rel="noopener noreferrer">
+                    Ver en el mapa
+                  </a>
+                </div>
+              ))}
+              <div>
+                <h3>Escribinos</h3>
+                <p>{textoRespuesta}</p>
+                <a
+                  href={linkWhatsApp()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-evento="clic_whatsapp"
+                >
+                  WhatsApp
+                </a>
+                <a
+                  href={sitio.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Instagram @pielyestetica
                 </a>
               </div>
-            ))}
-            <div>
-              <h3>Escribinos</h3>
-              <p>{textoRespuesta}</p>
-              <a href={linkWhatsApp()} target="_blank" rel="noopener noreferrer" data-evento="clic_whatsapp">
-                WhatsApp
-              </a>
-              <a href={sitio.instagram} target="_blank" rel="noopener noreferrer">
-                Instagram @pielyestetica
-              </a>
             </div>
           </div>
         </div>

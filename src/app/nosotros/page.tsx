@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Contacto, Hero, Retrato, Slot } from "@/componentes/Bloques";
+import Image from "next/image";
+import { Contacto, Hero, Retrato } from "@/componentes/Bloques";
 
 export const metadata: Metadata = {
   title: "Nosotros",
@@ -24,12 +25,18 @@ export default function Pagina() {
         eyebrow="Nosotros"
         linea1="Dra. Laura"
         linea2="Mijelshon"
+        foto={{
+          src: "/dra-mijelshon-ventana-2.jpg",
+          alt: "Dra. Laura Mijelshon en su consultorio",
+          ancho: 1400,
+          alto: 2087,
+        }}
         bajada="Dirige el Centro Piel y Estética con responsabilidad y respeto por sus pacientes. Desde hace más de 20 años realiza tratamientos para afecciones dermatológicas y estética médica."
       />
       <section>
         <div className="wrap">
           <div className="pro">
-            <Retrato />
+            <Retrato foto="escritorio" />
             <div>
               <h2 className="titulo-seccion">Carrera profesional</h2>
               <ul className="corrige una">
@@ -45,21 +52,28 @@ export default function Pagina() {
         </div>
       </section>
       <section className="claro">
-        <div className="wrap dos">
+        <div className="wrap dos centrado">
           <div>
             <h2 className="titulo-seccion">El equipo</h2>
             <p>
               Nuestro equipo está compuesto por dermatólogos y cosmiatras que
               brindan una atención personalizada, con conocimiento integral de
-              todos los tratamientos disponibles para cuidar la salud de la
-              piel y mejorar su aspecto.
+              todos los tratamientos disponibles para cuidar la salud de la piel
+              y mejorar su aspecto.
             </p>
             <p>
               Quienes integran el centro ofrecen un trato cálido y respetuoso.
             </p>
           </div>
           <div>
-            <Slot forma="ancho">Espacio para foto del equipo o de los consultorios</Slot>
+            <Image
+              className="foto-equipo"
+              src="/fotos/equipo-recepcion.jpg"
+              alt="Parte del equipo en la recepción del centro"
+              width={1400}
+              height={1057}
+              sizes="(max-width: 860px) 92vw, 500px"
+            />
           </div>
         </div>
       </section>

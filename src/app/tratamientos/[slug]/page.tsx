@@ -1,9 +1,11 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Acciones, Contacto, Faqs, Hero, Retrato, Slot } from "@/componentes/Bloques";
 import { Texto, quedaVacio } from "@/componentes/Texto";
 import Link from "next/link";
 import { detalleDe, problemasDe, tratamientosConPagina, urlProblema } from "@/contenido";
+import { fotosTratamiento } from "@/contenido/fotos";
 
 export const dynamicParams = false;
 
@@ -33,6 +35,7 @@ export default async function Pagina({ params }: Props) {
   if (!t) notFound();
   const d = detalleDe(t);
   const indicado = problemasDe(t);
+  const foto = fotosTratamiento[t.slug];
 
   return (
     <>
@@ -62,7 +65,51 @@ export default async function Pagina({ params }: Props) {
       </Hero>
 
       <section>
-        <div className="wrap dos">
+        {foto ? (
+          <div className="wrap dos con-foto">
+            <div>
+              <div>
+                <h2 className="titulo-seccion">Qué es</h2>
+                {d.queEs.filter((p) => !quedaVacio(p)).map((p) => (
+                  <p key={p}>
+                    <Texto>{p}</Texto>
+                  </p>
+                ))}
+              </div>
+              {!d.corrige && indicado.length > 0 && (
+                <div>
+                  <h2 className="titulo-seccion">Para qué está indicado</h2>
+                  <ul className="corrige una">
+                    {indicado.map((p) => (
+                      <li key={p.slug}>
+                        <Link href={urlProblema(p)}>{p.nombre}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {d.corrige && (
+                <div>
+                  <h2 className="titulo-seccion">Qué se puede corregir</h2>
+                  <ul className="corrige">
+                    {d.corrige.items.map((i) => (
+                      <li key={i}>{i}</li>
+                    ))}
+                  </ul>
+                  {d.corrige.nota && !quedaVacio(d.corrige.nota) && (
+                    <p className="nota-chica">
+                      <Texto>{d.corrige.nota}</Texto>
+                    </p>
+                  )}
+                </div>
+              )}
+            </div>
+            <figure className="foto-trat">
+              <Image src={foto.src} alt={foto.alt} width={1400} height={1750} sizes="(max-width: 860px) 92vw, 500px" />
+            </figure>
+          </div>
+        ) : (
+          <div className="wrap dos">
           <div>
             <h2 className="titulo-seccion">Qué es</h2>
             {d.queEs.filter((p) => !quedaVacio(p)).map((p) => (
@@ -98,7 +145,8 @@ export default async function Pagina({ params }: Props) {
               )}
             </div>
           )}
-        </div>
+          </div>
+        )}
       </section>
 
       <section className="claro">

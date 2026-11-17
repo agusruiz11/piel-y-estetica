@@ -1,7 +1,17 @@
 import type { Metadata } from "next";
 import { Indice } from "@/componentes/Indice";
-import { Cierre, Hero, TarjetaProblema, TarjetaTratamiento } from "@/componentes/Bloques";
-import { gruposTratamiento, mostrarPendientes, problemas, tratamientos } from "@/contenido";
+import {
+  Cierre,
+  Hero,
+  TarjetaProblema,
+  TarjetaTratamiento,
+} from "@/componentes/Bloques";
+import {
+  gruposTratamiento,
+  mostrarPendientes,
+  problemas,
+  tratamientos,
+} from "@/contenido";
 
 export const metadata: Metadata = {
   title: "Tratamientos",
@@ -46,6 +56,13 @@ export default function Pagina() {
       <Hero
         eyebrow="Centro Piel y Estética"
         linea1="Tratamientos"
+        foto={{
+          src: "/fotos/consultorio-box-ancha.jpg",
+          alt: "Consultorio del Centro Piel y Estética en Las Cañitas",
+          ancho: 1500,
+          alto: 1000,
+          ancha: true,
+        }}
         bajada="Podés entrar por lo que te preocupa o por el tratamiento que ya conocés. Los dos caminos llevan a la misma información."
       />
       <Indice porProblema={porProblema} porTratamiento={porTratamiento} />

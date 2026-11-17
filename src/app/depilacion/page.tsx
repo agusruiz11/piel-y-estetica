@@ -14,6 +14,12 @@ export default function Pagina() {
         eyebrow="Depilación"
         linea1="Depilación"
         linea2="láser"
+        foto={{
+          src: "/fotos/luz-pulsada.jpg",
+          alt: "Sesión con el equipo de luz pulsada Harmony en el centro",
+          ancho: 1400,
+          alto: 1750,
+        }}
         bajada="Depilación en todas las zonas del cuerpo, con láser Soprano Ice y luz pulsada Harmony. Los packs se arman según lo que necesita cada paciente."
       >
         <Acciones tema="depilación láser" />
@@ -29,8 +35,8 @@ export default function Pagina() {
               trabajar.
             </p>
             <p>
-              Se pueden tratar todas las zonas del cuerpo. Los packs se arman
-              a medida, según lo que necesite cada paciente.
+              Se pueden tratar todas las zonas del cuerpo. Los packs se arman a
+              medida, según lo que necesite cada paciente.
             </p>
           </div>
           <div>

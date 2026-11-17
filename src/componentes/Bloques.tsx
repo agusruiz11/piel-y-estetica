@@ -42,7 +42,13 @@ export function Pie() {
     <footer className="pie">
       <div className="wrap ancho pie-cols">
         <div>
-          <Image src="/logo-horizontal-claro.png" alt={sitio.nombre} width={720} height={111} className="pie-logo" />
+          <Image
+            src="/logo-horizontal-claro.png"
+            alt={sitio.nombre}
+            width={720}
+            height={111}
+            className="pie-logo"
+          />
           <p>
             Dermatología clínica y estética médica. Todos los tratamientos
             empiezan con una evaluación.
@@ -59,7 +65,12 @@ export function Pie() {
         <div>
           <p className="pie-titulo">Consultorios</p>
           {sitio.sedes.map((s) => (
-            <a key={s.nombre} href={s.mapa} target="_blank" rel="noopener noreferrer">
+            <a
+              key={s.nombre}
+              href={s.mapa}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {s.direccion.replace(/\s*\[\[.*?\]\]/g, "")}
             </a>
           ))}
@@ -68,7 +79,12 @@ export function Pie() {
           <p className="pie-titulo">Contacto</p>
           <a href={`tel:${sitio.telefonoLink}`}>{sitio.telefono}</a>
           <a href={`mailto:${sitio.mail}`}>{sitio.mail}</a>
-          <a href={linkWhatsApp()} target="_blank" rel="noopener noreferrer" data-evento="clic_whatsapp">
+          <a
+            href={linkWhatsApp()}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-evento="clic_whatsapp"
+          >
             WhatsApp
           </a>
           <a href={sitio.instagram} target="_blank" rel="noopener noreferrer">
@@ -82,12 +98,16 @@ export function Pie() {
       <div className="wrap ancho pie-base">
         <div className="pie-legal">
           <p>
-            © {new Date().getFullYear()} {sitio.nombre}. Todos los derechos reservados.
+            © {new Date().getFullYear()} {sitio.nombre}. Todos los derechos
+            reservados.
           </p>
           <p>
             Directora médica: {sitio.doctora}, médica dermatóloga · {matricula}
           </p>
-          <p>La información de este sitio es orientativa y no reemplaza la consulta médica.</p>
+          <p>
+            La información de este sitio es orientativa y no reemplaza la
+            consulta médica.
+          </p>
         </div>
         <a
           className="pie-credito"
@@ -98,8 +118,22 @@ export function Pie() {
         >
           <span>Hecho por</span>
           <span className="pie-credito-logo">
-            <Image src="/posicionarte-mono.png" alt="" width={700} height={125} sizes="130px" className="mono" />
-            <Image src="/posicionarte-color.png" alt="Posicionarte" width={700} height={125} sizes="130px" className="color" />
+            <Image
+              src="/posicionarte-mono.png"
+              alt=""
+              width={700}
+              height={125}
+              sizes="130px"
+              className="mono"
+            />
+            <Image
+              src="/posicionarte-color.png"
+              alt="Posicionarte"
+              width={700}
+              height={125}
+              sizes="130px"
+              className="color"
+            />
           </span>
         </a>
       </div>
@@ -114,6 +148,7 @@ export function Hero({
   bajada,
   children,
   lateral,
+  foto,
 }: {
   eyebrow: string;
   linea1: string;
@@ -121,26 +156,54 @@ export function Hero({
   bajada?: string;
   children?: React.ReactNode;
   lateral?: React.ReactNode;
+  foto?: {
+    src: string;
+    alt: string;
+    ancho: number;
+    alto: number;
+    ancha?: boolean;
+  };
 }) {
+  const costado =
+    lateral ??
+    (foto && (
+      <figure className={foto.ancha ? "hero-foto ancha" : "hero-foto"}>
+        <Image
+          src={foto.src}
+          alt={foto.alt}
+          width={foto.ancho}
+          height={foto.alto}
+          sizes="(max-width: 860px) 80vw, 420px"
+          priority
+        />
+      </figure>
+    ));
   return (
-    <header className={lateral ? "hero con-lateral" : "hero"}>
+    <header className={costado ? "hero con-lateral" : "hero simple"}>
       <div className="wrap">
         <div>
           <p className="eyebrow">{eyebrow}</p>
           <h1>
             {linea1}
+            {linea2 && " "}
             {linea2 && <span className="linea2">{linea2}</span>}
           </h1>
           {bajada && <p className="bajada">{bajada}</p>}
           {children}
         </div>
-        {lateral}
+        {costado}
       </div>
     </header>
   );
 }
 
-export function Acciones({ tema, secundario }: { tema?: string; secundario?: { href: string; texto: string } }) {
+export function Acciones({
+  tema,
+  secundario,
+}: {
+  tema?: string;
+  secundario?: { href: string; texto: string };
+}) {
   return (
     <div className="acciones">
       <a className="btn primario" href="#consulta">
@@ -185,21 +248,40 @@ export function Faqs({ faqs }: { faqs: Faq[] }) {
   );
 }
 
-export function Retrato({ prioridad = false }: { prioridad?: boolean }) {
+const retratos = {
+  guardapolvo: { src: "/dra-mijelshon-guardapolvo.jpg", alto: 2100 },
+  ventana: { src: "/dra-mijelshon-ventana-2.jpg", alto: 2087 },
+  escritorio: { src: "/dra-mijelshon-escritorio-2.jpg", alto: 2087 },
+};
+
+export function Retrato({
+  prioridad = false,
+  foto = "guardapolvo",
+}: {
+  prioridad?: boolean;
+  foto?: keyof typeof retratos;
+}) {
+  const r = retratos[foto];
   return (
     <Image
       className="retrato-foto"
-      src="/retrato-dra-mijelshon.jpg"
+      src={r.src}
       alt="Dra. Laura Mijelshon en su consultorio"
-      width={1200}
-      height={1500}
+      width={1400}
+      height={r.alto}
       sizes="(max-width: 860px) 60vw, 260px"
       priority={prioridad}
     />
   );
 }
 
-export function Slot({ forma, children }: { forma: "ancho" | "retrato"; children: React.ReactNode }) {
+export function Slot({
+  forma,
+  children,
+}: {
+  forma: "ancho" | "retrato";
+  children: React.ReactNode;
+}) {
   if (!mostrarPendientes) return null;
   return <div className={`slot ${forma}`}>{children}</div>;
 }
@@ -262,7 +344,11 @@ export function Contacto({
           </p>
         </div>
         <div>
-          <Formulario origen={origen} opcionesExtra={opcionesExtra} etiquetaMensaje={etiquetaMensaje} />
+          <Formulario
+            origen={origen}
+            opcionesExtra={opcionesExtra}
+            etiquetaMensaje={etiquetaMensaje}
+          />
         </div>
       </div>
     </section>
@@ -291,13 +377,21 @@ export function Cierre() {
   );
 }
 
-function Chips({ items }: { items: { texto: string; href: string; pendiente?: boolean }[] }) {
+function Chips({
+  items,
+}: {
+  items: { texto: string; href: string; pendiente?: boolean }[];
+}) {
   const visibles = items.filter((i) => mostrarPendientes || !i.pendiente);
   if (visibles.length === 0) return null;
   return (
     <ul className="chips">
       {visibles.map((i) => {
-        const contenido = i.pendiente ? <span className="pendiente">{i.texto}</span> : i.texto;
+        const contenido = i.pendiente ? (
+          <span className="pendiente">{i.texto}</span>
+        ) : (
+          i.texto
+        );
         return (
           <li key={i.texto}>
             <Link href={i.href}>{contenido}</Link>
@@ -345,7 +439,10 @@ export function TarjetaTratamiento({ t }: { t: Tratamiento }) {
       </p>
       <p className="rel">Indicado para</p>
       <Chips
-        items={ps.map((p) => ({ texto: p.corto ?? p.nombre, href: urlProblema(p) }))}
+        items={ps.map((p) => ({
+          texto: p.corto ?? p.nombre,
+          href: urlProblema(p),
+        }))}
       />
       <Link className="ir" href={href}>
         {t.destino ? "Ver la sección" : "Ver tratamiento"}

@@ -480,3 +480,12 @@ select option { color: var(--marino); }
 .h-hero-foto .h-credencial { left: auto; bottom: auto; top: 1.6rem; right: -2.6rem; }
 @media (max-width: 1240px) { .h-hero-foto .h-credencial { right: -0.8rem; } }
 @media (max-width: 640px) { .h-hero-foto .h-credencial { position: static; margin-top: 1rem; } }
+
+/* WhatsApp flotante */
+.wa-flotante { position: fixed; right: 1.4rem; bottom: 1.4rem; z-index: 50; display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+.wa-flotante-icono { display: grid; place-items: center; width: 60px; height: 60px; border-radius: 50%; background: #25d366; color: #fff; box-shadow: 0 10px 28px rgba(4, 39, 56, 0.22); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.wa-flotante-texto { font-family: var(--sub); font-weight: 700; font-size: 0.88rem; color: var(--marino); background: var(--blanco); padding: 0.6rem 1rem; border-radius: 999px; box-shadow: var(--sombra); opacity: 0; transform: translateX(8px); pointer-events: none; transition: opacity 0.2s ease, transform 0.2s ease; white-space: nowrap; }
+.wa-flotante:hover .wa-flotante-icono, .wa-flotante:focus-visible .wa-flotante-icono { transform: scale(1.06); box-shadow: 0 14px 34px rgba(4, 39, 56, 0.28); }
+.wa-flotante:hover .wa-flotante-texto, .wa-flotante:focus-visible .wa-flotante-texto { opacity: 1; transform: none; }
+@media (max-width: 640px) { .wa-flotante { right: 1rem; bottom: 1rem; } .wa-flotante-icono { width: 54px; height: 54px; } .wa-flotante-texto { display: none; } }
+.pie { padding-bottom: 6.5rem; }

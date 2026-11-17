@@ -1,15 +1,33 @@
 import type { Metadata } from "next";
-import { League_Gothic, Montserrat, Quicksand, Yellowtail } from "next/font/google";
+import {
+  League_Gothic,
+  Montserrat,
+  Quicksand,
+  Yellowtail,
+} from "next/font/google";
 import { Nav } from "@/componentes/Nav";
 import { BarraRevision, Pie } from "@/componentes/Bloques";
 import { sitio } from "@/contenido";
 import "./globals.css";
+import { WhatsAppFlotante } from "@/componentes/WhatsAppFlotante";
 
 const titulo = League_Gothic({ subsets: ["latin"], variable: "--f-titulo" });
-const sub = Quicksand({ subsets: ["latin"], weight: ["500", "600", "700"], variable: "--f-sub" });
-const texto = Montserrat({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--f-texto" });
+const sub = Quicksand({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--f-sub",
+});
+const texto = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--f-texto",
+});
 
-const script = Yellowtail({ subsets: ["latin"], weight: "400", variable: "--f-script" });
+const script = Yellowtail({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--f-script",
+});
 
 const indexable = process.env.NEXT_PUBLIC_INDEXABLE === "1";
 
@@ -26,14 +44,22 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image" },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="es-AR" className={`${titulo.variable} ${sub.variable} ${texto.variable} ${script.variable}`}>
+    <html
+      lang="es-AR"
+      className={`${titulo.variable} ${sub.variable} ${texto.variable} ${script.variable}`}
+    >
       <body>
         <BarraRevision />
         <Nav />
         <main>{children}</main>
         <Pie />
+        <WhatsAppFlotante />
       </body>
     </html>
   );

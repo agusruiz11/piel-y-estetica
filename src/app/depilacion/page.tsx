@@ -15,10 +15,11 @@ export default function Pagina() {
         linea1="Depilación"
         linea2="láser"
         foto={{
-          src: "/fotos/luz-pulsada.jpg",
-          alt: "Sesión con el equipo de luz pulsada Harmony en el centro",
-          ancho: 1400,
-          alto: 1750,
+          src: "/fotos/depilacion-laser.jpg",
+          alt: "Sesión de depilación láser en la pierna",
+          ancho: 1024,
+          alto: 683,
+          ancha: true,
         }}
         bajada="Depilación en todas las zonas del cuerpo, con láser Soprano Ice y luz pulsada Harmony. Los packs se arman según lo que necesita cada paciente."
       >
